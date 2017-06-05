@@ -26,13 +26,15 @@ Enemy.prototype.update = function() {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+    for (var i = 0; i < allEnemies.length; i++) {
+            allEnemies[i].checkCollission(i);
+        }
 };
 
 Enemy.prototype.checkCollission = function(i){
     if(this.x < player.x + 84 && this.x + 100 >player.x && this.y < player.y + 83 && 71 + this.y > player.y){
         player.resetPlayer();
         infoBoard.update(" You lost this time");
-        player.award;
     }
 };
 
@@ -74,9 +76,7 @@ Player.prototype.startNewgame = function(startTime, stopTime){
     gameInterval = setInterval(gameTimer, 500);
 
     function gameTimer(){
-        for (var i = 0; i < allEnemies.length; i++) {
-            allEnemies[i].checkCollission(i);
-        }
+
         count += 500;
         if (count >= 1000*60*5) {
             clearInterval(this.gameInterval);
@@ -88,7 +88,6 @@ Player.prototype.startNewgame = function(startTime, stopTime){
             enemy2.speedX = 3; //default startup speed
             enemy3.speedX = 2; //default startup speed
             infoBoard.update("Game over");
-            player.award();
         }
 
 };
@@ -140,7 +139,7 @@ Player.prototype.handleInput = (function(key, x, y){
             this.y += speedY;
 
             this.traverseLimit();
-            player.reward();
+            this.reward();
         }
     }
 });
