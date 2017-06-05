@@ -4,6 +4,8 @@ frontend-nanodegree-arcade-game
 
 This is a video game for single player which is developed using Object Oriented JavaScript.
 
+##How to load the game
+You can go to this link: https://aditimalviya.github.io/frontend-nanodegree-arcade-game/
 ##Game Description
 
 **The Game consists of the following:**
