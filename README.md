@@ -1,4 +1,4 @@
-frontend-nanodegree-arcade-game
+Classic-Arcade-Game
 ===============================
 #Classic Arcade Game
 
